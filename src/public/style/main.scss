@@ -1,0 +1,113 @@
+$primary-color: blanchedalmond;
+$secondary-color: plum;
+
+* {
+  font-size: 20px;
+}
+
+body {
+  color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #2d0922;
+  background-size: 100%;
+  position: relative;
+  margin: 10px;
+
+  .inlineContainer {
+    display: inline-flex;
+  }
+
+  .commandName {
+    color: $secondary-color;
+  }
+
+  .avatar {
+    margin-left: -25px;
+    opacity: 0.8;
+    width: 155px;
+    pointer-events: none;
+    height: 155px;
+  }
+
+  #terminal {
+    font-family: monospace;
+    color: $primary-color;
+    height: 95%;
+    width: 95%;
+
+    #output {
+      margin-bottom: 10px;
+    }
+
+    #input {
+      margin-top: 20px;
+    }
+
+    #prompt {
+      font-weight: bold;
+    }
+
+    #cmd {
+      font-size: 20px;
+      background: transparent;
+      border: none;
+      color: $primary-color;
+      outline: none;
+      transition: caret-color 0.3s ease;
+      width: 70%;
+
+      &:focus {
+        caret-color: $primary-color;
+      }
+    }
+
+    #suggestions {
+      margin-top: 10px;
+      color: $primary-color;
+
+      .selected {
+        font-weight: 800;
+        color: aquamarine;
+      }
+    }
+
+    .ownerTerminal {
+      font-size: 20px;
+      color: rgb(90, 187, 154);
+    }
+
+    @keyframes destroyAnimation {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0.2;
+      }
+    }
+  }
+}
+
+.command-input {
+  font-weight: normal;
+}
+
+.command-input.command-entered {
+  font-weight: bold;
+}
+
+.nameErr {
+  font-size: 100px;
+}
+
+.descErr {
+  font-size: 10px;
+}
